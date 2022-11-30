@@ -1,70 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-PT">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Instituto Politécnico de Viseu</title>
-  <link rel="stylesheet" href="styles.css" />
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900;&display=swap" rel="stylesheet" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+	<title>Instituto Politécnico de Viseu</title>
+	<link rel="stylesheet" href="css/global.css" />
+	<link rel="stylesheet" href="css/index.css" />
+
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap"
+		rel="stylesheet">
 </head>
 
 <body>
-  <header>
-    <a href="/">
-      <img src="img/logo.svg" alt="Logótipo do IPV" />
-    </a>
+	<header>
+		<a href="index.html">
+			<img src="img/logo.svg" alt="Logótipo do IPV" />
+		</a>
 
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="escolas.html">Escolas</a></li>
-      <li><a href="#">Cursos</a></li>
-    </ul>
-  </header>
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="escolas.html">Escolas</a></li>
+			<li><a href="cursos.html">Cursos</a></li>
+			<li><a href="contacto.html">Contacto</a></li>
+		</ul>
+	</header>
 
-  <main>
-    <div class="slider">
-      <img class="active" src="img/slide1.jpg" loading="lazy" />
-      <img class="" src="img/slide2.jpg" loading="lazy" />
-      <img class="" src="img/slide3.jpg" loading="lazy" />
-    </div>
-  </main>
+	<main>
+		<div class="slider-container">
+			<div class="slider">
+				<img class="active" src="img/slide1.jpg" />
+				<img class="" src="img/slide2.jpg" />
+				<img class="" src="img/slide3.jpg" />
+			</div>
+		</div>
 
-  <footer>
-    <p>Instituto Politécnico de Viseu</p>
+		<div class="info">
+			<div class="info-left">
+				<h1>Instituto Politécnico de Viseu</h1>
+				<div class="container-img">
+					<img src="img/slide1.jpg" alt="">
+				</div>
+			</div>
 
-    <ul>
-      <li>
-        <a href="https://www.facebook.com/ipviseu/" target="_blank">
-          <img src="img/facebook.svg" alt="Facebook">
-        </a>
-      </li>
+			<div class="info-right">
+				<p>Fundado no dia 26 de dezembro de 1979 é o primeiro e único estabelecimento de ensino superior público
+					do distrito, assinalando assim um marco importante de desenvolvimento para a região de Viseu.</p>
 
-      <li>
-        <a href="https://www.instagram.com/politecnico_de_viseu/?hl=pt" target="_blank">
-          <img src="img/instagram.svg" alt="Instagram">
-        </a>
-      </li>
+				<p>O Instituto Politécnico de Viseu é composto por cinco escolas superiores e uma comunidade constituída
+					por mais de 6000 estudantes, 355 docentes e 230 funcionários.</p>
+			</div>
+		</div>
+	</main>
 
-      <li>
-        <a href="https://www.linkedin.com/school/instituto-polit%C3%A9cnico-de-viseu/" target="_blank">
-          <img src="img/linkedin.svg" alt="LinkedIn">
-        </a>
-      </li>
+	<footer>
+		<p>Instituto Politécnico de Viseu</p>
 
-      <li>
-        <a href="https://www.youtube.com/user/politecnicodeviseu" target="_blank">
-          <img src="img/youtube.svg" alt="YouTube">
-        </a>
-      </li>
-    </ul>
-  </footer>
+		<ul>
+			<li>
+				<a href="https://www.facebook.com/ipviseu/" target="_blank">
+					<img src="img/facebook.svg" alt="Facebook">
+				</a>
+			</li>
 
-  <script src="script.js"></script>
+			<li>
+				<a href="https://www.instagram.com/politecnico_de_viseu/?hl=pt" target="_blank">
+					<img src="img/instagram.svg" alt="Instagram">
+				</a>
+			</li>
+
+			<li>
+				<a href="https://www.linkedin.com/school/instituto-polit%C3%A9cnico-de-viseu/" target="_blank">
+					<img src="img/linkedin.svg" alt="LinkedIn">
+				</a>
+			</li>
+
+			<li>
+				<a href="https://www.youtube.com/user/politecnicodeviseu" target="_blank">
+					<img src="img/youtube.svg" alt="YouTube">
+				</a>
+			</li>
+		</ul>
+	</footer>
+
+	<script src="js/index.js"></script>
 </body>
 
 </html>

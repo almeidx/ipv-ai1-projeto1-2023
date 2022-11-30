@@ -1,9 +1,16 @@
 {
-  "[html]": {
-    "javascript.autoClosingTags": false,
-    "editor.defaultFormatter": "vscode.html-language-features"
-  },
-  "files.associations": {
-    "*.css": "css"
-  }
+	"[html]": {
+		"javascript.autoClosingTags": false,
+		"editor.defaultFormatter": "vscode.html-language-features"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"files.associations": {
+		"*.css": "css"
+	},
+	"editor.tabSize": 4,
+	"editor.insertSpaces": false,
+	"editor.wordWrapColumn": 120,
+	"prettier.printWidth": 120
 }

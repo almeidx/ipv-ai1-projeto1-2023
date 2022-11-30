@@ -1,0 +1,18 @@
+header {
+	position: unset;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+form div {
+	display: flex;
+	gap: 3rem;
+}
+
+form div {
+	color: black;
+}
