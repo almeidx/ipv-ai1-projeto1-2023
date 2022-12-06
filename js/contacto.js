@@ -4,12 +4,41 @@ class Form extends React.Component {
 	constructor(props) {
 		super(props);
 
-		this.state = { nome: "", email: "", mensagem: "" };
+		this.state = {
+			nome: "",
+			email: "",
+			mensagem: "",
+			sendBtnMsg: "Enviar",
+		};
+
+		this.sendBtnRef = React.createRef();
 	}
 
 	handleSubmit(e) {
 		e.preventDefault();
-		console.log(this.state);
+
+		this.sendBtnRef.current.disabled = true;
+
+		const { nome, email, mensagem } = this.state;
+
+		console.log({ nome, email, mensagem });
+
+		this.setState({
+			nome: "",
+			email: "",
+			mensagem: "",
+			sendBtnMsg: "A enviar...",
+		});
+
+		setTimeout(() => {
+			this.setState({ sendBtnMsg: "Enviado!" });
+
+			setTimeout(() => {
+				this.sendBtnRef.current.disabled = false;
+
+				this.setState({ sendBtnMsg: "Enviar" });
+			}, 2_000);
+		}, 1_000);
 	}
 
 	render() {
@@ -56,18 +85,27 @@ class Form extends React.Component {
 					placeholder: "Mensagem",
 					value: this.state.mensagem,
 					required: true,
+					cols: 75,
+					rows: 10,
 					onChange: (e) =>
 						this.setState({ mensagem: e.target.value }),
 				})
 			),
 			React.createElement(
 				"div",
-				null,
-				React.createElement("button", { type: "submit" }, "Enviar"),
-				React.createElement("button", { type: "reset" }, "Limpar")
+				{ className: "btn-container" },
+				React.createElement("button", { type: "reset" }, "Limpar"),
+				React.createElement(
+					"button",
+					{ type: "submit", ref: this.sendBtnRef },
+					this.state.sendBtnMsg
+				)
 			)
 		);
 	}
 }
 
-ReactDOM.render(React.createElement(Form), document.getElementById("root"));
+ReactDOM.render(
+	React.createElement(Form, null),
+	document.getElementById("root")
+);

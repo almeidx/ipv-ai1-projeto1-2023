@@ -1,3 +1,5 @@
+"use strict";
+
 const slides = document.querySelectorAll(".slider > img");
 const amountOfSliders = slides.length;
 let activeSlide = 0;

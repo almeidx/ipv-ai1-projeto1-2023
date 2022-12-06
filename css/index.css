@@ -10,26 +10,45 @@ main p {
 	color: black;
 }
 
-.slider {
+.bg-img {
+	position: relative;
+	width: 100%;
+	height: 90vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	background-color: var(--background-color);
 }
 
-.slider > img {
-	display: none;
-	width: 100%;
-	height: 100vh;
-	object-fit: cover;
+.overlay {
+	position: relative;
+	width: 75%;
+	height: 75%;
+	box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.5);
+	border-radius: 20px;
+	background-image: url("https://blog.emania.com.br/wp-content/uploads/2016/02/direitos-autorais-e-de-imagem.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	animation: bgChange 12s ease infinite;
+	background-color: rgba(0, 0, 0, 0.5);
 }
 
-.slider > img.active {
-	display: block;
+@keyframes bgChange {
+	0% {
+		background-image: url("../img/slide1.jpg");
+	}
+	50% {
+		background-image: url("../img/slide2.jpg");
+	}
+	100% {
+		background-image: url("../img/slide3.jpg");
+	}
 }
 
-.slider-container {
-	min-width: 100%;
-	min-height: 100vh;
+.wave {
+	margin-top: -10rem;
+	margin-bottom: -8rem;
 }
 
 .info {
@@ -38,36 +57,74 @@ main p {
 	flex-direction: row;
 	min-width: 100%;
 	height: 10vh;
+
+	background: linear-gradient(
+		90deg,
+		rgba(111, 111, 111, 1) 5%,
+		rgba(255, 255, 255, 1) 95%
+	);
 }
 
 .info-left {
 	display: flex;
 	flex: 40%;
+	flex-wrap: wrap;
 	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 
 	min-width: 40%;
-	background-color: purple;
+
+	overflow: hidden;
 }
 
 .info-left h1 {
 	text-align: center;
 	font-size: 2.2rem;
 	font-weight: 700;
-	margin-bottom: 1rem;
+
 	margin-top: 1rem;
+
+	color: rgb(60, 60, 60);
+}
+
+.highlight-word {
+	background: linear-gradient(90deg, #f45925, #f9b11f, #f45925) 0 0 / 400%
+		100%;
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	-webkit-text-fill-color: transparent;
+	animation: move-background 4s infinite linear;
+}
+
+@keyframes move-background {
+	to {
+		background-position: 400% 0;
+	}
 }
 
 .info-left .container-img {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	overflow: hidden;
+
+	margin-bottom: 2rem;
+
+	max-width: 30rem;
+	height: 30rem;
 }
 
 .info-left img {
+	display: flex;
 	border-radius: 60%;
-	margin-bottom: 2rem;
-	width: 35rem;
-	height: 35rem;
+
+	box-shadow: -10px 10px 25px 10px rgba(0, 0, 0, 0.2),
+		10px -10px 25px 10px rgba(0, 0, 0, 0.2);
+
+	width: 80%;
+	height: 80%;
 }
 
 .info-right {
@@ -78,7 +135,30 @@ main p {
 	padding: 5rem;
 
 	min-width: 60%;
-	background-color: green;
+
+	overflow: hidden;
+}
+
+.info-right .right-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.info-right p {
+	font-size: 1.2rem;
+	font-weight: 500;
+
+	color: rgb(53, 53, 53);
+	margin-top: 2rem;
+}
+
+.info-right p a {
+	color: black;
+}
+
+.info-right p a:hover {
+	color: rgb(46, 46, 46);
 }
 
 @media (max-width: 1024px) {
@@ -86,8 +166,22 @@ main p {
 		flex-direction: column !important;
 	}
 
+	.info-left h1 {
+		font-size: 1.6rem;
+	}
+
+	.info-left {
+		min-width: 100%;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: -2rem !important;
+	}
+
+	.info-right {
+		margin-top: -5rem;
+	}
 	.info-left .container-img {
-		width: 40rem;
+		width: 30rem;
 		height: 30rem;
 	}
 }

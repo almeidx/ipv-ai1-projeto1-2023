@@ -8,8 +8,12 @@ main .escolas1 {
 	justify-content: space-around;
 	align-items: center;
 	flex-wrap: wrap;
-	margin-bottom: 1rem;
 	margin-top: 1rem;
+	margin-inline: 2rem;
+}
+
+.escolas1 img {
+	margin-left: 1rem;
 }
 
 main .escolas2 {
@@ -18,37 +22,74 @@ main .escolas2 {
 	justify-content: space-evenly;
 	align-items: center;
 	flex-wrap: wrap;
+	margin-top: 2rem;
+	padding-bottom: 2rem;
 }
 
 main .escola {
 	margin-top: 1rem;
-	height: 40vh;
+	height: 20rem;
 	width: 20rem;
 	background-color: rgb(226, 226, 226);
 	box-shadow: 5px 5px 5px gray;
 	border-radius: 20px;
 	margin-left: 1rem;
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
+	perspective: 1000px;
 }
 
-main .escola h1 {
-	word-wrap: break-word;
-	font-size: 25px;
+main .escola a {
+	font-style: none;
+	text-decoration: none;
+}
+
+main .escola p {
+	color: black;
+	font-size: 1.2rem;
 	padding-inline: 1rem;
 	text-align: center;
-	margin-top: 1rem;
 }
 
-main .escola img {
+main .escola:hover {
+	transform: scale(1.05);
+	transition: ease;
+	transition-duration: 0.2s;
+}
+
+img {
 	width: 20rem;
 }
 
 main hr {
-	margin-top: -3rem;
+	margin-top: -2rem;
+	margin-bottom: 1.3rem;
 	border: 1px solid rgb(187, 187, 187);
 }
-main .escola:hover {
-	transform: scale(1.05);
-	transition-duration: 100ms;
+
+@media (min-width: 2300px) {
+	main {
+		display: flex;
+		flex-direction: row;
+	}
+
+	main .escolas1 {
+		display: flex;
+		flex: 60%;
+		flex-direction: row;
+		margin: 0;
+		padding: 0;
+	}
+	main .escolas2 {
+		display: flex;
+		flex: 40%;
+		justify-content: space-ba;
+		flex-direction: row;
+		margin: 0;
+		padding: 0;
+	}
+
+	main .escola2 {
+		margin-top: 0;
+	}
 }
