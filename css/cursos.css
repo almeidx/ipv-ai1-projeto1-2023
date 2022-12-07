@@ -1,3 +1,63 @@
 header {
 	position: unset;
 }
+
+body {
+	background: #fff;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	background-color: red;
+}
+
+.titulo {
+	display: flex;
+	align-items: center;
+
+	min-height: 7rem;
+	background-color: green;
+}
+
+.titulo h2 {
+	font-size: 2rem;
+	margin-left: 5%;
+}
+.content h3 {
+	font-size: 1.3rem;
+	margin-left: 0.3rem;
+	padding-top: 1rem;
+}
+
+.cursos {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	/* grid-template-rows: 1fr 1fr 1fr 1fr; */
+}
+
+.imagem {
+	background-color: white;
+
+	min-height: 35vh;
+
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+}
+
+.content {
+	padding-inline: 1rem;
+	border-right: 2px solid black;
+	display: flex;
+	flex-direction: column;
+	flex: 100%;
+}
+
+.content .lista {
+	margin-left: 1rem;
+	padding-block: 1rem;
+}
+
+.content .lista li {
+	padding-top: 0.5rem;
+}
