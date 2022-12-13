@@ -13,5 +13,25 @@
 	"editor.insertSpaces": false,
 	"editor.wordWrapColumn": 120,
 	"prettier.printWidth": 120,
-	"cSpell.words": ["Visivel"]
+	"cSpell.words": [
+		"Enoturismo",
+		"esav",
+		"esev",
+		"essv",
+		"estgl",
+		"estgv",
+		"Geriatria",
+		"Gerontologia",
+		"Graduacoes",
+		"Graducaoes",
+		"ITED",
+		"Paliativos",
+		"Pediátrica",
+		"Psicossocial",
+		"relogio",
+		"Softinsa",
+		"Tecidular",
+		"Visivel",
+		"Zootécnica"
+	]
 }

@@ -30,16 +30,34 @@ main p {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
-	animation: bgChange 12s ease infinite;
+	animation: bgChange 15s cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
 	background-color: rgba(0, 0, 0, 0.5);
 }
 
 @keyframes bgChange {
-	0% 100% {
-		background-image: url("../img/slide1.jpg");
+	0%,
+	100% {
+		background-image: url("../img/sliders/ipv.jpg");
 	}
-	50% {
-		background-image: url("../img/slide2.jpg");
+
+	16.66% {
+		background-image: url("../img/sliders/estgv.jpg");
+	}
+
+	33.32% {
+		background-image: url("../img/sliders/esav.jpg");
+	}
+
+	49.98% {
+		background-image: url("../img/sliders/esev.jpg");
+	}
+
+	66.64% {
+		background-image: url("../img/sliders/essv.jpg");
+	}
+
+	83.3% {
+		background-image: url("../img/sliders/estgl.jpg");
 	}
 }
 
@@ -86,8 +104,8 @@ main p {
 }
 
 .highlight-word {
-	background: linear-gradient(90deg, #f45925, #f9b11f, #f45925) 0 0 / 400%
-		100%;
+	/* background: linear-gradient(90deg, #f45925, #f9b11f, #f45925) 0 0 / 400% 100%; */
+	background: linear-gradient(90deg, white, black, white) 0 0 / 400% 100%;
 	background-clip: text;
 	-webkit-background-clip: text;
 	color: transparent;

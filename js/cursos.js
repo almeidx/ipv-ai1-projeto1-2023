@@ -1,12 +1,64 @@
+"use strict";
+
 const cursos = {
 	estgv: {
-		licenciatura: [],
+		licenciatura: [
+			"Contabilidade",
+			"Engenharia Civil",
+			"Engenharia do Ambiente",
+			"Engenharia Eletrotécnica",
+			"Engenharia Informática",
+			"Engenharia Mecânica",
+			"Gestão Industrial",
+			"Gestão de Empresas",
+			"Gestão de Empresas (Pós-laboral)",
+			"Marketing",
+			"Tecnologias e Design de Multimédia",
+			"Turismo",
+			"Tecnologia e Design de Mobiliário",
+		],
 
-		mestrado: [],
+		mestrado: [
+			"Engenharia de Construção e Reabilitação",
+			"Engenharia Eletrotécnica - Energia e Automação Industrial",
+			"Engenharia Informática - Sistemas de Informação",
+			"Engenharia Mecânica e Gestão Industrial",
+			"Finanças Empresariais",
+			"Gestão Turística",
+			"Marketing",
+			"Tecnologias Ambientais",
+		],
 
-		posLicenciatura: [],
+		posLicenciatura: [
+			"Análises Laboratoriais",
+			"Automação e Energia",
+			"Desenho e Modelação Digital",
+			"Desenvolvimento para a Web e Dispositivos Móveis",
+			"Design e Tecnologia de Mobiliário",
+			"Eficiência Energética nos Edifícios",
+			"Energias Renováveis",
+			"Enoturismo",
+			"Gestão Comercial e Vendas",
+			"Gestão da Segurança no Trabalho e do Ambiente",
+			"Manutenção Industrial",
+			"Reabilitação e Conservação de Edifícios",
+			"Redes e Sistemas Informáticos",
+			"Tecnologia Automóvel",
+		],
 
-		posGraduacoes: [],
+		posGraduacoes: [
+			"Engenharia de Construção e Reabilitação",
+			"Engenharia Eletrotécnica - Energia e Automação Industrial",
+			"Engenharia Mecânica e Gestão Industrial",
+			"Finanças Empresariais",
+			"Gestão Turística",
+			"Marketing Research",
+			"Sistemas e Tecnologias de Informação para as Organizações",
+			"Tecnologias Ambientais",
+		],
+
+		posLicenciaturaNome: "CTeSP",
+		posGraducaoesNome: "Pós-Graduações",
 	},
 
 	essv: {
@@ -38,6 +90,9 @@ const cursos = {
 			"Tratamento de Feridas e Regeneração Tecidular",
 			"Urgência e Emergência",
 		],
+
+		posLicenciaturaNome: "Pós-licenciatura",
+		posGraducaoesNome: "Pós-Graduações",
 	},
 
 	esev: {
@@ -51,30 +106,152 @@ const cursos = {
 			"Publicidade e Relações Públicas",
 		],
 
-		mestrado: [],
+		mestrado: [
+			"Comunicação Aplicada",
+			"Educação Especial, Área de Especialização Domínio Cognitivo e Motor",
+			"Educação Pré-Escolar e Ensino do 1º Ciclo do Ensino Básico",
+			"Ensino de Educação Visual e Tecnológica no Ensino Básico",
+			"Ensino do 1.º Ciclo do Ensino Básico e de Matemática e Ciências Naturais no 2.º Ciclo do Ensino Básico",
+			"Ensino do 1.º Ciclo do Ensino Básico e de Português e História e Geografia de Portugal no 2.º Ciclo do Ensino Básico",
+			"Intervenção Psicossocial com Crianças e Jovens em Risco",
+		],
 
-		posLicenciatura: [],
+		posLicenciatura: [
+			"Apoio à Infância",
+			"Produção nas Artes do Espetáculo",
+		],
 
-		posGraduacoes: [],
+		posGraduacoes: [
+			"Criação Teatral Aplicada",
+			"Direção Artística na Produção Audiovisual",
+			"Ilustração",
+			"Intervenção Psicossocial com Pessoas Idosas",
+		],
+
+		posLicenciaturaNome: "CTeSP",
+		posGraducaoesNome: "Pós-Graduações",
 	},
 
 	esav: {
-		licenciatura: [],
+		licenciatura: [
+			"Enfermagem Veterinária",
+			"Engenharia Agronómica",
+			"Engenharia Alimentar",
+			"Engenharia Zootécnica",
+		],
 
-		mestrado: [],
+		mestrado: [
+			"Qualidade E Tecnologia Alimentar",
+			"Tecnologias Da Produção Animal",
+			"Enfermagem Veterinária Em Animais De Companhia",
+			"Engenharia Agronómica",
+		],
 
-		posLicenciatura: [],
+		posLicenciatura: [
+			"Agricultura Biológica",
+			"Gastronomia, Turismo E Bem-Estar",
+			"Produção Animal",
+			"Proteção Civil",
+			"Viticultura E Enologia",
+		],
 
-		posGraduacoes: [],
+		posGraduacoes: [
+			"Nutrição E Segurança Alimentar",
+			"Agropecuária Sustentável",
+			"Engenharia Agronómica",
+		],
+
+		posLicenciaturaNome: "CTeSP",
+		posGraducaoesNome: "Pós-Graduações",
 	},
 
 	estgl: {
-		licenciatura: [],
+		licenciatura: [
+			"Gestão Comercial",
+			"Engenharia Informática E Telecomunicações",
+			"Gestão E Informática",
+			"Gestão Turística, Cultural E Patrimonial",
+			"Secretariado De Administração",
+			"Serviço Social",
+			"Serviço Social (Pós-Laboral)",
+		],
 
-		mestrado: [],
+		mestrado: [
+			"Gestão De Organizações Sociais",
+			"Gestão Do Património Cultural E Desenvolvimento Local",
+		],
 
-		posLicenciatura: [],
+		posLicenciatura: [
+			"Cibersegurança E Telecomunicações",
+			"Transportes E Logística",
+			"Turismo De Saúde E Bem Estar (Em Aprovação)",
+			"Tecnologias E Programação De Sistemas De Informação (Parceria Com A Softinsa - IBM)",
+			"Integração De Sistemas E Serviços De Telecomunicações Pós-Laboral (Sernancelhe)",
+			"Intervenção Social E Comunitária - Pós-Laboral (Sernancelhe)",
+			"Informática Industrial - (Moimenta Da Beira)",
+			"Assessoria E Comunicação Organizacional - Pós-Laboral (Moimenta Da Beira)",
+			"Gestão Comercial E Vendas",
+			"Contabilidade E Fiscalidade Para Pme",
+			"Relações E Negócios Internacionais",
+			"Enoturismo",
+		],
 
-		posGraduacoes: [],
+		posGraduacoes: ["Curso De ITED (Pré-Inscrições)"],
+
+		posLicenciaturaNome: "CTeSP",
+		posGraducaoesNome: "Cursos Breves",
 	},
 };
+
+const licenciaturaCtn = document.getElementById("lista-licenciaturas");
+const mestradosCtn = document.getElementById("lista-mestrados");
+const posLicenciaturaCtn = document.getElementById("lista-pos-licenciatura");
+const posGraduacoesCtn = document.getElementById("lista-pos-graduacoes");
+const posLicenciaturaTitulo = document.getElementById("pos-licenciatura");
+const posGraduacoesTitulo = document.getElementById("pos-graduacoes");
+const escolasSelect = document.getElementById("escolas-select");
+
+let selectedSchool = "estgv";
+
+escolasSelect.addEventListener("change", (e) => {
+	selectedSchool = e.target.value;
+	renderSchoolDetails(selectedSchool);
+});
+
+renderSchoolDetails(selectedSchool);
+
+function appendLi(ctn, curso) {
+	const li = document.createElement("li");
+	li.innerText = curso;
+	ctn.appendChild(li);
+}
+
+function renderSchoolDetails(school) {
+	const {
+		licenciatura,
+		mestrado,
+		posLicenciatura,
+		posGraduacoes,
+		posLicenciaturaNome,
+		posGraducaoesNome,
+	} = cursos[school];
+
+	updateList(licenciatura, licenciaturaCtn);
+	updateList(mestrado, mestradosCtn);
+	updateList(posLicenciatura, posLicenciaturaCtn);
+	updateList(posGraduacoes, posGraduacoesCtn);
+
+	posLicenciaturaTitulo.innerText = posLicenciaturaNome;
+	posGraduacoesTitulo.innerText = posGraducaoesNome;
+}
+
+function updateList(cursos, ctn) {
+	emptyList(ctn);
+	cursos.forEach((curso) => {
+		appendLi(ctn, curso);
+	});
+}
+
+function emptyList(ctn) {
+	ctn.innerHTML = "";
+}

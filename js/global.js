@@ -1,25 +1,22 @@
-const linkCursos = document.querySelector(".cursos-link");
-const listaEscolas = document.querySelector(".escolas-lista");
+"use strict";
 
-let hoveredLink = false;
-let timeout;
+const footerNote = document.getElementById("footer-note");
+const relogio = document.getElementById("relogio");
 
-linkCursos.addEventListener("mouseover", () => {
-	listaEscolas.dataset.visivel = "true";
-	hoveredLink = true;
-});
+setInterval(() => {
+	const date = new Date();
+	const hours = date.getHours();
+	const minutes = date.getMinutes();
+	const seconds = date.getSeconds();
 
-linkCursos.addEventListener("mouseout", () => {
-	timeout = setTimeout(() => {
-		listaEscolas.dataset.visivel = "false";
-		timeout = null;
-	}, 200);
-});
+	relogio.innerText = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+}, 1_000);
 
-document.addEventListener("mousemove", (event) => {});
+footerNote.innerText = footerNote.innerText.replace(
+	"{{ano}}",
+	new Date().getFullYear()
+);
 
-listaEscolas.addEventListener("mouseover", () => {
-	if (listaEscolas.dataset.visivel === "false") {
-		listaEscolas.dataset.visivel = "true";
-	}
-});
+function pad(num) {
+	return num.toString().padStart(2, "0");
+}
