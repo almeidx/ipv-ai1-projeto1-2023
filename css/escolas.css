@@ -3,23 +3,53 @@ header {
 }
 
 main {
-	margin-top: 1rem;
 	margin-inline: 2rem;
 
 	display: grid;
 	grid-template-rows: repeat(5, 1fr);
+
+	place-items: center;
 }
 
 @media (min-width: 768px) {
 	main {
 		grid-template-rows: repeat(3, 1fr);
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(8, 1fr);
+	}
+
+	main div:nth-child(1),
+	main div:nth-child(2),
+	main div:nth-child(3),
+	main div:nth-child(4) {
+		grid-column: span 4;
+	}
+
+	main div:nth-last-child(1) {
+		grid-column-start: 2;
+		grid-column: 3 / span 4;
 	}
 }
 
 @media (min-width: 1024px) {
 	main {
 		grid-template-rows: repeat(2, 1fr);
+		grid-template-columns: repeat(12, 1fr);
+	}
+
+	main div:nth-child(1),
+	main div:nth-child(2),
+	main div:nth-child(3) {
+		grid-column: span 4;
+	}
+
+	main div:nth-last-child(2) {
+		grid-row-start: 2;
+		grid-column: 3 / span 4;
+	}
+
+	main div:nth-last-child(1) {
+		grid-row-start: 2;
+		grid-column: 7 / span 4;
 	}
 }
 
@@ -69,30 +99,3 @@ main hr {
 	margin-bottom: 1.3rem;
 	border: 1px solid rgb(187, 187, 187);
 }
-
-/* @media (min-width: 2300px) {
-	main {
-		display: flex;
-		flex-direction: row;
-	}
-
-	main .escolas1 {
-		display: flex;
-		flex: 60%;
-		flex-direction: row;
-		margin: 0;
-		padding: 0;
-	}
-	main .escolas2 {
-		display: flex;
-		flex: 40%;
-		justify-content: space-ba;
-		flex-direction: row;
-		margin: 0;
-		padding: 0;
-	}
-
-	main .escola2 {
-		margin-top: 0;
-	}
-} */

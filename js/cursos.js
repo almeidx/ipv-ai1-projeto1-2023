@@ -213,6 +213,16 @@ const escolasSelect = document.getElementById("escolas-select");
 
 let selectedSchool = "estgv";
 
+document.addEventListener("DOMContentLoaded", (e) => {
+	const hash = window.location.hash.slice(1);
+
+	if (hash && hash in cursos) {
+		selectedSchool = hash;
+		escolasSelect.value = selectedSchool;
+		renderSchoolDetails(selectedSchool);
+	}
+});
+
 escolasSelect.addEventListener("change", (e) => {
 	selectedSchool = e.target.value;
 	renderSchoolDetails(selectedSchool);

@@ -26,7 +26,7 @@ main p {
 	height: 75%;
 	box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.5);
 	border-radius: 20px;
-	background-image: url("https://blog.emania.com.br/wp-content/uploads/2016/02/direitos-autorais-e-de-imagem.jpg");
+	background-image: url("../img/sliders/ipv.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -69,9 +69,8 @@ main p {
 .info {
 	display: flex;
 	flex: 100%;
-	flex-direction: row;
-	min-width: 100%;
-	height: 10vh;
+
+	/* padding-block: 1rem; */
 
 	background: linear-gradient(
 		90deg,
@@ -83,14 +82,10 @@ main p {
 .info-left {
 	display: flex;
 	flex: 40%;
-	flex-wrap: wrap;
+
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-
-	min-width: 40%;
-
-	overflow: hidden;
 }
 
 .info-left h1 {
@@ -98,13 +93,10 @@ main p {
 	font-size: 2.2rem;
 	font-weight: 700;
 
-	margin-top: 1rem;
-
 	color: rgb(60, 60, 60);
 }
 
 .highlight-word {
-	/* background: linear-gradient(90deg, #f45925, #f9b11f, #f45925) 0 0 / 400% 100%; */
 	background: linear-gradient(90deg, white, black, white) 0 0 / 400% 100%;
 	background-clip: text;
 	-webkit-background-clip: text;
@@ -123,19 +115,16 @@ main p {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	overflow: hidden;
 
-	margin-bottom: 2rem;
-
-	width: 32rem;
-	height: 32rem;
+	/* width: 30vw;
+	height: 40vh; */
 }
 
 .info-left img {
-	display: flex;
 	border-radius: 20px;
+
 	/* box-shadow: -10px 10px 25px 10px rgba(0, 0, 0, 0.2),
-		10px -10px 25px 10px rgba(0, 0, 0, 0.2); */
+			10px -10px 25px 10px rgba(0, 0, 0, 0.2); */
 
 	width: 100%;
 	height: 80%;
@@ -145,20 +134,10 @@ main p {
 
 .info-right {
 	display: flex;
-	flex: 60%;
 	flex-direction: column;
+	flex: 60%;
 
 	padding: 5rem;
-
-	min-width: 60%;
-
-	overflow: hidden;
-}
-
-.info-right .right-info {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
 }
 
 .info-right p {
@@ -169,35 +148,26 @@ main p {
 	margin-top: 2rem;
 }
 
-.info-right p a {
-	color: black;
-}
-
-.info-right p a:hover {
-	color: rgb(46, 46, 46);
-}
-
 @media (max-width: 1024px) {
 	.info {
-		flex-direction: column !important;
+		flex-direction: column;
+		padding-top: 13rem;
 	}
 
 	.info-left h1 {
 		font-size: 1.6rem;
 	}
 
-	.info-left {
-		min-width: 100%;
-		justify-content: center;
-		align-items: center;
-		margin-bottom: -2rem !important;
+	.info-left .container-img {
+		width: 80vw;
+		height: 30vh;
 	}
 
 	.info-right {
-		margin-top: -5rem;
+		padding: 0 1rem 2rem;
 	}
-	.info-left .container-img {
-		width: 30rem;
-		height: 30rem;
+
+	.info-right p:first-child {
+		margin-top: 0;
 	}
 }
