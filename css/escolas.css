@@ -30,6 +30,14 @@ main {
 	}
 }
 
+@media (max-width: 600px) {
+	main div {
+		margin: 0 !important;
+		padding: 0 !important;
+		margin-block: 1rem !important;
+	}
+}
+
 @media (min-width: 1024px) {
 	main {
 		grid-template-rows: repeat(2, 1fr);

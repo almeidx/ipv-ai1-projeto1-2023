@@ -10,7 +10,36 @@ header {
 	display: grid;
 	place-items: center;
 	min-height: 100vh;
-	background-image: url(../img/mesh-22.png);
+	background-image: url(../img/ipv-background.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	gap: 5rem;
+
+	padding-inline: 2.5rem;
+}
+
+@media (max-width: 1024px) {
+	.container {
+		margin-block: 7rem;
+		flex-direction: column-reverse;
+	}
+}
+
+.container > div {
+	display: flex;
+	flex-direction: column;
+	gap: 4rem;
+}
+
+section {
+	display: flex;
 }
 
 form {
@@ -19,9 +48,9 @@ form {
 	gap: 2rem;
 
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-	backdrop-filter: blur(50px);
+	backdrop-filter: blur(25px);
 
-	padding: 2rem 5rem;
+	padding: 2rem 3rem;
 	border-radius: 1rem;
 	font-size: 1.2rem;
 }
@@ -34,6 +63,10 @@ form div {
 
 form div {
 	color: black;
+}
+
+textarea {
+	resize: vertical;
 }
 
 form input,

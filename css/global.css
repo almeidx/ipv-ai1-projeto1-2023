@@ -93,7 +93,7 @@ header > ul li:hover {
 
 		z-index: 9999;
 		display: block;
-		position: fixed
+		position: fixed;
 		right: 0;
 		top: 0;
 	}
@@ -105,9 +105,9 @@ header > ul li:hover {
 		width: 3rem;
 		cursor: pointer;
 
-		position: fixed;
+		position: absolute;
 		top: 1rem;
-		right: 8rem;
+		right: 1rem;
 	}
 
 	header .hamburger img {
