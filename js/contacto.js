@@ -7,11 +7,25 @@ class Form extends React.Component {
 		this.state = {
 			nome: "",
 			email: "",
+			telemovel: "",
+
+			motivoContacto: "",
 			mensagem: "",
+
 			sendBtnMsg: "Enviar",
 		};
 
 		this.sendBtnRef = React.createRef();
+	}
+
+	handleReset() {
+		this.setState({
+			nome: "",
+			email: "",
+			telemovel: "",
+			motivoContacto: "",
+			mensagem: "",
+		});
 	}
 
 	handleSubmit(e) {
@@ -19,16 +33,16 @@ class Form extends React.Component {
 
 		this.sendBtnRef.current.disabled = true;
 
-		const { nome, email, mensagem } = this.state;
+		const { nome, email, telemovel, motivoContacto, mensagem } = this.state;
 
-		console.log({ nome, email, mensagem });
+		console.log({ nome, email, telemovel, motivoContacto, mensagem });
 
-		this.setState({
-			nome: "",
-			email: "",
-			mensagem: "",
-			sendBtnMsg: "A enviar...",
-		});
+		localStorage.setItem(
+			"userInfo",
+			JSON.stringify({ nome, email, telemovel })
+		);
+
+		this.setState({ sendBtnMsg: "A enviar..." });
 
 		setTimeout(() => {
 			this.setState({ sendBtnMsg: "Enviado!" });
@@ -39,6 +53,18 @@ class Form extends React.Component {
 				this.setState({ sendBtnMsg: "Enviar" });
 			}, 2_000);
 		}, 1_000);
+	}
+
+	componentDidMount() {
+		const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+
+		if (userInfo) {
+			this.setState({
+				nome: userInfo.nome,
+				email: userInfo.email,
+				telemovel: userInfo.telemovel,
+			});
+		}
 	}
 
 	render() {
@@ -131,47 +157,6 @@ class Form extends React.Component {
 				React.createElement(
 					"div",
 					null,
-					React.createElement(
-						"label",
-						{
-							htmlFor: "motivo-contacto",
-							onChange: (e) =>
-								this.setState({
-									motivoContacto: e.target.value,
-								}),
-							value: this.state.motivoContacto,
-						},
-						"Motivo contacto"
-					),
-					React.createElement(
-						"select",
-						{ id: "motivo-contacto", required: true },
-						React.createElement(
-							"option",
-							{ value: "Informação" },
-							"Informação"
-						),
-						React.createElement(
-							"option",
-							{ value: "Reclamação" },
-							"Reclamação"
-						),
-						React.createElement(
-							"option",
-							{ value: "Sugestão" },
-							"Sugestão"
-						),
-						React.createElement(
-							"option",
-							{ value: "Outro" },
-							"Outro"
-						)
-					)
-				),
-
-				React.createElement(
-					"div",
-					null,
 					React.createElement("label", { htmlFor: "email" }, "Email"),
 					React.createElement("input", {
 						type: "email",
@@ -199,8 +184,60 @@ class Form extends React.Component {
 						value: this.state.telemovel,
 						required: true,
 						onChange: (e) =>
-							this.setState({ email: e.target.value }),
+							this.setState({ telemovel: e.target.value }),
 					})
+				),
+
+				React.createElement(
+					"div",
+					null,
+					React.createElement(
+						"label",
+						{ htmlFor: "motivo-contacto" },
+						"Motivo contacto"
+					),
+					React.createElement(
+						"select",
+						{
+							id: "motivo-contacto",
+							required: true,
+							onChange: (e) =>
+								this.setState({
+									motivoContacto: e.target.value,
+								}),
+							value: this.state.motivoContacto,
+						},
+						React.createElement(
+							"option",
+							{
+								value: "",
+								selected: true,
+								disabled: true,
+								hidden: true,
+							},
+							"Escolha um motivo"
+						),
+						React.createElement(
+							"option",
+							{ value: "Informação" },
+							"Informação"
+						),
+						React.createElement(
+							"option",
+							{ value: "Reclamação" },
+							"Reclamação"
+						),
+						React.createElement(
+							"option",
+							{ value: "Sugestão" },
+							"Sugestão"
+						),
+						React.createElement(
+							"option",
+							{ value: "Outro" },
+							"Outro"
+						)
+					)
 				),
 
 				React.createElement(
@@ -225,7 +262,11 @@ class Form extends React.Component {
 				React.createElement(
 					"div",
 					{ className: "btn-container" },
-					React.createElement("button", { type: "reset" }, "Limpar"),
+					React.createElement(
+						"button",
+						{ type: "reset", onClick: () => this.handleReset() },
+						"Limpar"
+					),
 					React.createElement(
 						"button",
 						{ type: "submit", ref: this.sendBtnRef },

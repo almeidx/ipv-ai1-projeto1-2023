@@ -10,13 +10,41 @@ header.innerHTML = `
 <ul class="menu">
 	<li><a class="menuItem" href="index.html">Home</a></li>
 	<li><a class="menuItem" href="escolas.html">Escolas</a></li>
-	<li><a class="menuItem" href="cursos.html">Cursos</a></li>
+	<li>
+		<button onclick="myFunction()" class="dropbtn">Cursos</button>
+		<div id="myDropdown" class="dropdown-content">
+			<a href="cursos.html#estgv">ESTGV</a>
+			<a href="cursos.html#esev">ESEV</a>
+			<a href="cursos.html#esav">ESAV</a>
+			<a href="cursos.html#essv">ESSV</a>
+			<a href="cursos.html#estgl">ESTGL</a>
+		</div>
+	</li>
 	<li><a class="menuItem" href="contacto.html">Contacto</a></li>
 </ul>
+
 
 <button class="hamburger menu-open">
 	<img src="../img/svg/hamburger.svg" />
 </button>`;
+
+function myFunction() {
+	document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function (event) {
+	if (!event.target.matches(".dropbtn")) {
+		var dropdowns = document.getElementsByClassName("dropdown-content");
+		var i;
+		for (i = 0; i < dropdowns.length; i++) {
+			var openDropdown = dropdowns[i];
+			if (openDropdown.classList.contains("show")) {
+				openDropdown.classList.remove("show");
+			}
+		}
+	}
+};
 
 const footer = document.querySelector("footer");
 
