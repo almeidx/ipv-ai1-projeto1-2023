@@ -4,28 +4,40 @@ header {
 	left: 0;
 	right: 0;
 	background: transparent !important;
+	background-color: white !important;
 }
 
 body {
 	padding-top: var(--header-height);
 	background-image: url(../img/mesh-22.png);
+	background-color: white !important;
+}
+
+main {
+	background-color: whitesmoke;
 }
 
 .container {
 	display: flex;
 	flex-direction: column;
-	/* background-color: grey; */
+	background-color: whitesmoke;
+	color: black;
 }
 
 .titulo {
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-
 	/* 	min-height: 5rem;
 	margin-left: 1rem;
 	margin-block: 0.5rem;
  */
+}
+
+.container .titulo,
+.escolas-select {
+	padding-left: 2rem;
+	padding-top: 1rem;
 }
 
 .content h3 {
@@ -37,8 +49,27 @@ body {
 .cursos {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
 
-	/* grid-template-rows: 1fr 1fr 1fr 1fr; */
+@media (max-width: 1250px) {
+	.cursos {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 600px) {
+	.cursos {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+@media (max-width: 400px) {
+	.cursos {
+		grid-template-columns: repeat(1, 1fr);
+	}
+
+	.content {
+		height: 45vh !important;
+	}
 }
 
 .imagem {
@@ -46,6 +77,27 @@ body {
 	border-right: 2px solid black;
 	border-bottom: 2px solid black;
 	border-top: 2px solid black;
+
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.imagem[data-index="0"] {
+	background-image: url(../img/cursos/0303693548de76b8b1c0fef0579324a9.png);
+
+	background-position-y: -5rem; /* baixar ligeiramente a imagem para não focar muito na face da senhora */
+}
+
+.imagem[data-index="1"] {
+	background-image: url(../img/cursos/1da81c6d3a7c4d4996d10ca88954edb4.png);
+}
+
+.imagem[data-index="2"] {
+	background-image: url(../img/cursos/69725b4897f11e1934cbfaa672af0cc8.png);
+}
+
+.imagem[data-index="3"] {
+	background-image: url(../img/cursos/69e87ec1ee695fe67b6afd6ad3199294.png);
 }
 
 .content {

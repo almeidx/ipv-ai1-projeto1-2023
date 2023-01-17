@@ -41,41 +41,6 @@ class Form extends React.Component {
 		}, 1_000);
 	}
 
-	/*
-		<main>
-			<section>
-				<img />
-
-				<div>
-					<h1></h1>
-					<p><p/>
-				</div>
-			</section>
-
-			<section>
-				<img />
-
-				<div>
-					<h1></h1>
-					<p><p/>
-				</div>
-			</section>
-
-			<section>
-				<img />
-
-				<div>
-					<h1></h1>
-					<p><p/>
-				</div>
-			</section>
-
-			<form></form>
-
-		</main>
-
-	*/
-
 	render() {
 		return React.createElement(
 			"main",
@@ -94,10 +59,17 @@ class Form extends React.Component {
 						"div",
 						null,
 						React.createElement("h1", null, "Morada"),
+
 						React.createElement(
-							"p",
-							null,
-							"Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, veritatis!"
+							"a",
+							{ href: "https://goo.gl/maps/hkb7NYFQdHxfdDmr6" },
+							"Av. Cor. José Maria Vale de Andrade"
+						),
+						React.createElement("br", null),
+						React.createElement(
+							"a",
+							{ href: "https://goo.gl/maps/hkb7NYFQdHxfdDmr6" },
+							"Campus Politécnico - 3504-510 Viseu"
 						)
 					)
 				),
@@ -105,17 +77,16 @@ class Form extends React.Component {
 				React.createElement(
 					"section",
 					null,
-					React.createElement("img", {
-						src: "../img/svg/phone_2.svg",
-					}),
+					React.createElement("img", { src: "../img/svg/phone.svg" }),
+
 					React.createElement(
 						"div",
 						null,
-						React.createElement("h1", {}, "Contacto"),
+						React.createElement("h1", null, "Contacto"),
 						React.createElement(
-							"p",
-							{},
-							"Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, veritatis!"
+							"a",
+							{ href: "+tel:+351 232 480 700" },
+							"+351 232 480 700"
 						)
 					)
 				),
@@ -123,17 +94,16 @@ class Form extends React.Component {
 				React.createElement(
 					"section",
 					null,
-					React.createElement("img", {
-						src: "../img/svg/email_2.svg",
-					}),
+					React.createElement("img", { src: "../img/svg/email.svg" }),
+
 					React.createElement(
 						"div",
 						null,
-						React.createElement("h1", {}, "Email"),
+						React.createElement("h1", null, "Email"),
 						React.createElement(
-							"p",
-							{},
-							"Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, veritatis!"
+							"a",
+							{ href: "mailto:ipv@sc.ipv.pt" },
+							"ipv@sc.ipv.pt"
 						)
 					)
 				)
@@ -157,6 +127,48 @@ class Form extends React.Component {
 							this.setState({ nome: e.target.value }),
 					})
 				),
+
+				React.createElement(
+					"div",
+					null,
+					React.createElement(
+						"label",
+						{
+							htmlFor: "motivo-contacto",
+							onChange: (e) =>
+								this.setState({
+									motivoContacto: e.target.value,
+								}),
+							value: this.state.motivoContacto,
+						},
+						"Motivo contacto"
+					),
+					React.createElement(
+						"select",
+						{ id: "motivo-contacto", required: true },
+						React.createElement(
+							"option",
+							{ value: "Informação" },
+							"Informação"
+						),
+						React.createElement(
+							"option",
+							{ value: "Reclamação" },
+							"Reclamação"
+						),
+						React.createElement(
+							"option",
+							{ value: "Sugestão" },
+							"Sugestão"
+						),
+						React.createElement(
+							"option",
+							{ value: "Outro" },
+							"Outro"
+						)
+					)
+				),
+
 				React.createElement(
 					"div",
 					null,
@@ -171,6 +183,26 @@ class Form extends React.Component {
 							this.setState({ email: e.target.value }),
 					})
 				),
+
+				React.createElement(
+					"div",
+					null,
+					React.createElement(
+						"label",
+						{ htmlFor: "telemovel" },
+						"Telemóvel"
+					),
+					React.createElement("input", {
+						type: "tel",
+						id: "telemovel",
+						placeholder: "Telemóvel",
+						value: this.state.telemovel,
+						required: true,
+						onChange: (e) =>
+							this.setState({ email: e.target.value }),
+					})
+				),
+
 				React.createElement(
 					"div",
 					null,
@@ -184,12 +216,12 @@ class Form extends React.Component {
 						placeholder: "Mensagem",
 						value: this.state.mensagem,
 						required: true,
-						cols: 75,
 						rows: 10,
 						onChange: (e) =>
 							this.setState({ mensagem: e.target.value }),
 					})
 				),
+
 				React.createElement(
 					"div",
 					{ className: "btn-container" },

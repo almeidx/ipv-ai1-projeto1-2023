@@ -7,7 +7,7 @@ header.innerHTML = `
 	<img src="img/logo.svg" alt="Logótipo do IPV" />
 </a>
 
-<ul class = "menu">
+<ul class="menu">
 	<li><a class="menuItem" href="index.html">Home</a></li>
 	<li><a class="menuItem" href="escolas.html">Escolas</a></li>
 	<li><a class="menuItem" href="cursos.html">Cursos</a></li>
@@ -29,11 +29,11 @@ footer.innerHTML = `
 		<p>3504-510, Viseu</p>
 	</li>
 	<li>
-		<img src="img/svg/phone.svg" alt="">
+		<img src="img/svg/phone_fill.svg" alt="">
 		<a href="tel:+351 232 480 700"> +351 232 480 700</a>
 	</li>
 	<li>
-		<img src="img/svg/email.svg" alt="">
+		<img src="img/svg/email_fill.svg" alt="">
 		<a href="mailto:ipv@sc.ipv.pt">ipv@sc.ipv.pt</a>
 	</li>
 </ul>
