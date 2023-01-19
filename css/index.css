@@ -36,7 +36,7 @@ main p {
 	background-color: rgba(0, 0, 0, 0.5);
 	z-index: 0;
 }
-
+/*
 @keyframes bgChange {
 	0%,
 	100% {
@@ -62,7 +62,7 @@ main p {
 	83.3% {
 		background-image: url("../img/sliders/estgl.jpg");
 	}
-}
+} */
 
 .wave {
 	margin-top: -10rem;

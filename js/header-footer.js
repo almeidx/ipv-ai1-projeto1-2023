@@ -41,11 +41,11 @@ footer.innerHTML = `
 		<p>3504-510, Viseu</p>
 	</li>
 	<li>
-		<img src="img/svg/phone_fill.svg" alt="">
+		<img src="img/svg/phone_fill.svg" alt="Telemóvel">
 		<a href="tel:+351 232 480 700"> +351 232 480 700</a>
 	</li>
 	<li>
-		<img src="img/svg/email_fill.svg" alt="">
+		<img src="img/svg/email_fill.svg" alt="Email">
 		<a href="mailto:ipv@sc.ipv.pt">ipv@sc.ipv.pt</a>
 	</li>
 </ul>

@@ -13,6 +13,7 @@ header {
 	background-image: url(../img/ipv-background.png);
 	background-repeat: no-repeat;
 	background-size: cover;
+	padding-top: var(--header-height);
 }
 
 .container {
@@ -26,7 +27,7 @@ header {
 
 @media (max-width: 1024px) {
 	.container {
-		margin-block: 7rem;
+		margin-block: 1rem;
 		flex-direction: column-reverse;
 
 		padding-inline: 0.5rem;
