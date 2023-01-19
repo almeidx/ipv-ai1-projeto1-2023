@@ -9,14 +9,11 @@ const imagens = [
 	"img/sliders/estgl.jpg",
 	"img/sliders/esav.jpg",
 ];
-let imageIndex = 0;
+let imagemIndex = 0;
 
 setInterval(() => {
-	imageIndex++;
+	imagemIndex++;
+	if (imagemIndex >= imagens.length) imagemIndex = 0;
 
-	if (imageIndex >= imagens.length) {
-		imageIndex = 0;
-	}
-
-	slider.style.backgroundImage = `url(${imagens[imageIndex]})`;
+	slider.style.backgroundImage = `url(${imagens[imagemIndex]})`;
 }, 5_000);

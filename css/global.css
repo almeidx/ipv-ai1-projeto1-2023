@@ -3,12 +3,6 @@
 	--header-height: 5rem;
 }
 
-/* @media (prefers-color-scheme: dark) {
-	:root {
-		--background-color: #000;
-	}
-} */
-
 * {
 	margin: 0;
 	padding: 0;
@@ -218,8 +212,6 @@ footer #relogio {
 		margin-top: 20rem;
 	}
 }
-
-/* ------------------ */
 
 .cursos-btn {
 	color: black;
