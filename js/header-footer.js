@@ -86,16 +86,15 @@ footer.innerHTML = `
 
 const cursosDropdownBtn = document.querySelector(".cursos-btn");
 const cursosDropdown = document.querySelector(".cursos-dropdown-content");
+const cursosDropdownItems = document.querySelectorAll(
+	".cursos-dropdown-content a"
+);
 
 cursosDropdownBtn.addEventListener("click", () => {
-	console.log("button clicked");
-
 	cursosDropdown.classList.toggle("show");
 });
 
 window.addEventListener("click", (event) => {
-	console.log(event.target.matches(".cursos-btn"));
-
 	if (event.target.matches(".cursos-btn")) return;
 
 	if (cursosDropdown.classList.contains("show")) {
