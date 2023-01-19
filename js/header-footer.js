@@ -86,9 +86,6 @@ footer.innerHTML = `
 
 const cursosDropdownBtn = document.querySelector(".cursos-btn");
 const cursosDropdown = document.querySelector(".cursos-dropdown-content");
-const cursosDropdownItems = document.querySelectorAll(
-	".cursos-dropdown-content a"
-);
 
 cursosDropdownBtn.addEventListener("click", () => {
 	cursosDropdown.classList.toggle("show");
