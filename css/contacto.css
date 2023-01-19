@@ -41,10 +41,15 @@ header {
 
 section {
 	display: flex;
+	min-width: 35vw;
+}
+
+section img {
+	margin-right: 1rem;
 }
 
 section a {
-	color: lightblue;
+	color: white;
 }
 
 form {

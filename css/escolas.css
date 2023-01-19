@@ -3,11 +3,10 @@ header {
 }
 
 main {
-	margin-inline: 2rem;
-
 	display: grid;
 	grid-template-rows: repeat(5, 1fr);
 
+	margin-inline: 2rem;
 	place-items: center;
 }
 
@@ -98,7 +97,7 @@ main div:hover {
 	transition-duration: 0.2s;
 }
 
-img {
+main img {
 	width: 20rem;
 }
 

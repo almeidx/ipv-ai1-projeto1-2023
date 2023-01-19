@@ -11,8 +11,11 @@ header.innerHTML = `
 	<li><a class="menuItem" href="index.html">Home</a></li>
 	<li><a class="menuItem" href="escolas.html">Escolas</a></li>
 	<li>
-		<button onclick="myFunction()" class="dropbtn">Cursos</button>
-		<div id="myDropdown" class="dropdown-content">
+		<button class="cursos-btn">
+			Cursos
+			<img src="img/svg/upwards_arrow.svg">
+		</button>
+		<div class="cursos-dropdown-content">
 			<a href="cursos.html#estgv">ESTGV</a>
 			<a href="cursos.html#esev">ESEV</a>
 			<a href="cursos.html#esav">ESAV</a>
@@ -23,28 +26,9 @@ header.innerHTML = `
 	<li><a class="menuItem" href="contacto.html">Contacto</a></li>
 </ul>
 
-
 <button class="hamburger menu-open">
 	<img src="../img/svg/hamburger.svg" />
 </button>`;
-
-function myFunction() {
-	document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function (event) {
-	if (!event.target.matches(".dropbtn")) {
-		var dropdowns = document.getElementsByClassName("dropdown-content");
-		var i;
-		for (i = 0; i < dropdowns.length; i++) {
-			var openDropdown = dropdowns[i];
-			if (openDropdown.classList.contains("show")) {
-				openDropdown.classList.remove("show");
-			}
-		}
-	}
-};
 
 const footer = document.querySelector("footer");
 
@@ -99,3 +83,22 @@ footer.innerHTML = `
 <span id="footer-note">{{ano}} © Copyright IPV</span>
 
 <span id="relogio"></span>`;
+
+const cursosDropdownBtn = document.querySelector(".cursos-btn");
+const cursosDropdown = document.querySelector(".cursos-dropdown-content");
+
+cursosDropdownBtn.addEventListener("click", () => {
+	console.log("button clicked");
+
+	cursosDropdown.classList.toggle("show");
+});
+
+window.addEventListener("click", (event) => {
+	console.log(event.target.matches(".cursos-btn"));
+
+	if (event.target.matches(".cursos-btn")) return;
+
+	if (cursosDropdown.classList.contains("show")) {
+		cursosDropdown.classList.remove("show");
+	}
+});
