@@ -1,6 +1,6 @@
 "use strict";
 
-const slider = document.querySelector(".bg-img .overlay");
+const slider = document.querySelector(".bg-img .slider");
 const imagens = [
 	"img/sliders/ipv.jpg",
 	"img/sliders/estgv.jpg",

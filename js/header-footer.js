@@ -87,11 +87,14 @@ footer.innerHTML = `
 const cursosDropdownBtn = document.querySelector(".cursos-btn");
 const cursosDropdown = document.querySelector(".cursos-dropdown-content");
 
+// Abrir o dropdown ao clicar no botão
 cursosDropdownBtn.addEventListener("click", () => {
 	cursosDropdown.classList.toggle("show");
 });
 
+// Fechar dropdown quando o utilizador clicar fora
 window.addEventListener("click", (event) => {
+	// Se o utilizador clicar no botão, não fechar o dropdown
 	if (event.target.matches(".cursos-btn")) return;
 
 	if (cursosDropdown.classList.contains("show")) {

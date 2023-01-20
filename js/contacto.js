@@ -32,6 +32,7 @@ class Form extends React.Component {
 		e.preventDefault();
 
 		this.sendBtnRef.current.disabled = true;
+		this.setState({ sendBtnMsg: "A enviar..." });
 
 		const { nome, email, telemovel, motivoContacto, mensagem } = this.state;
 
@@ -42,8 +43,7 @@ class Form extends React.Component {
 			JSON.stringify({ nome, email, telemovel })
 		);
 
-		this.setState({ sendBtnMsg: "A enviar..." });
-
+		// Simular o envio do formulário
 		setTimeout(() => {
 			this.setState({ sendBtnMsg: "Enviado!" });
 
@@ -56,6 +56,7 @@ class Form extends React.Component {
 	}
 
 	componentDidMount() {
+		// Carregar dados do utilizador se existirem no localStorage
 		const userInfo = JSON.parse(localStorage.getItem("userInfo"));
 
 		if (userInfo) {
@@ -79,7 +80,7 @@ class Form extends React.Component {
 					"section",
 					null,
 					React.createElement("img", {
-						src: "../img/svg/location.svg",
+						src: "img/svg/location.svg",
 					}),
 					React.createElement(
 						"div",
@@ -103,7 +104,7 @@ class Form extends React.Component {
 				React.createElement(
 					"section",
 					null,
-					React.createElement("img", { src: "../img/svg/phone.svg" }),
+					React.createElement("img", { src: "img/svg/phone.svg" }),
 
 					React.createElement(
 						"div",
@@ -120,7 +121,7 @@ class Form extends React.Component {
 				React.createElement(
 					"section",
 					null,
-					React.createElement("img", { src: "../img/svg/email.svg" }),
+					React.createElement("img", { src: "img/svg/email.svg" }),
 
 					React.createElement(
 						"div",

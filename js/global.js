@@ -12,9 +12,10 @@ headerList.dataset.open = "false";
 hamburger.addEventListener("click", (e) => {
 	menuOpen = !menuOpen;
 
-	renderMenu();
+	updateHeaderState();
 });
 
+// Atualizar o relógio em tempo real
 setInterval(() => {
 	const date = new Date();
 	const hours = date.getHours();
@@ -24,19 +25,20 @@ setInterval(() => {
 	relogio.innerText = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
 }, 1_000);
 
+// Colocar o ano atual no footer
 footerNote.innerText = footerNote.innerText.replace(
 	"{{ano}}",
 	new Date().getFullYear()
 );
 
-function pad(num) {
-	return num.toString().padStart(2, "0");
-}
-
-function renderMenu() {
+function updateHeaderState() {
 	if (menuOpen) {
 		headerList.dataset.open = "true";
 	} else {
 		headerList.dataset.open = "false";
 	}
+}
+
+function pad(num) {
+	return num.toString().padStart(2, "0");
 }

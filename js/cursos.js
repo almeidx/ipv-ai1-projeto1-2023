@@ -1,6 +1,6 @@
 "use strict";
 
-const cursos = {
+const cursosDeEscola = {
 	estgv: {
 		licenciatura: [
 			"Contabilidade",
@@ -213,21 +213,19 @@ const escolasSelect = document.getElementById("escolas-select");
 
 let selectedSchool = "estgv";
 
+// Carregar os dados da escola quando a página carregar
 document.addEventListener("DOMContentLoaded", renderSchoolByHash);
+
+// Isto é necessário para atualizar a escola selecionada caso o utilizador utilize o sub-menu na navbar enquanto está na página
 window.addEventListener("hashchange", renderSchoolByHash);
 
+// Atualizar a escola selecionada quando o utilizador alterar a escola no select
 escolasSelect.addEventListener("change", (e) => {
 	selectedSchool = e.target.value;
 	renderSchoolDetails(selectedSchool);
 });
 
 renderSchoolDetails(selectedSchool);
-
-function appendLi(ctn, curso) {
-	const li = document.createElement("li");
-	li.innerText = curso;
-	ctn.appendChild(li);
-}
 
 function renderSchoolDetails(school) {
 	const {
@@ -237,13 +235,14 @@ function renderSchoolDetails(school) {
 		posGraduacoes,
 		posLicenciaturaNome,
 		posGraducaoesNome,
-	} = cursos[school];
+	} = cursosDeEscola[school];
 
 	updateList(licenciatura, licenciaturaCtn);
 	updateList(mestrado, mestradosCtn);
 	updateList(posLicenciatura, posLicenciaturaCtn);
 	updateList(posGraduacoes, posGraduacoesCtn);
 
+	// Nem todas as escolas têm Licenciaturas ou Pós-Graduações
 	posLicenciaturaTitulo.innerText = posLicenciaturaNome;
 	posGraduacoesTitulo.innerText = posGraducaoesNome;
 }
@@ -255,6 +254,12 @@ function updateList(cursos, ctn) {
 	});
 }
 
+function appendLi(ctn, curso) {
+	const li = document.createElement("li");
+	li.innerText = curso;
+	ctn.appendChild(li);
+}
+
 function emptyList(ctn) {
 	ctn.innerHTML = "";
 }
@@ -262,9 +267,13 @@ function emptyList(ctn) {
 function renderSchoolByHash() {
 	const hash = window.location.hash.slice(1);
 
-	if (hash && hash in cursos) {
+	// Se existir o hash no URL e for uma escola válida, atualizar a escola selecionada
+	if (hash && hash in cursosDeEscola) {
 		selectedSchool = hash;
+
+		// Atualizar o select
 		escolasSelect.value = selectedSchool;
+
 		renderSchoolDetails(selectedSchool);
 	}
 }
